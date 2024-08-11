@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorkWithDb;
 
 namespace RegLogTest
 {
@@ -22,11 +23,23 @@ namespace RegLogTest
 
         public void LogWindow_Load(object? sender, EventArgs e)
         {
+            this.ActiveControl = null;
         }
         public void EnterButton_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show("123");
-            _parent.Close();
+            string login = this.textBox1.Text;
+            string password = this.textBox2.Text;
+            var userForCheck = new User(login, password);
+            string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nelex\\source\\repos\\RegLogTest\\RegLogTest\\Database1.mdf;Integrated Security=True";
+            DataBaseUserChecker checker = new DataBaseUserChecker(ConnectionString);
+            if (checker.CheckUser(userForCheck))
+            {
+                MessageBox.Show("Вошел");
+            }
+            else
+            {
+                MessageBox.Show("Пользователя не существует");
+            }
         }
         public void GoToRegWindow(object? sender, EventArgs e)
         {
@@ -44,15 +57,6 @@ namespace RegLogTest
 
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            this.ActiveControl = null;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void LogWindow_Shown(object sender, EventArgs e)
         {

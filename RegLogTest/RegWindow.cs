@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorkWithDb;
 
 namespace RegLogTest
 {
@@ -28,9 +29,21 @@ namespace RegLogTest
         }
         public void RegBut_Click(object? sender, EventArgs e)
         {
+            string login = this.textBox1.Text;
+            string password = this.textBox2.Text;
+            var userForAddToDB = new User(login, password);
+            string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\nelex\\source\\repos\\RegLogTest\\RegLogTest\\Database1.mdf;Integrated Security=True";
+            DataBaseUserAdder Adder = new DataBaseUserAdder(ConnectionString);
+            if(Adder.AddUser(userForAddToDB))
+            {
+                MessageBox.Show("Пользователь успешно добавлен");
+            }
+            else
+            {
+                MessageBox.Show("Не удалось добавить пользователя");
+            }
 
-            MessageBox.Show("123");
-            _parent.Close();
+
         }
 
         private void RegWindow_Load(object sender, EventArgs e)
@@ -59,6 +72,11 @@ namespace RegLogTest
         private void RegWindow_Shown(object sender, EventArgs e)
         {
             this.ActiveControl = null;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

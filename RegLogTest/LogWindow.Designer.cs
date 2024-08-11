@@ -85,7 +85,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(534, 363);
             panel3.TabIndex = 4;
-            panel3.Paint += panel3_Paint;
             // 
             // label3
             // 
@@ -119,7 +118,6 @@
             label1.TabIndex = 3;
             label1.Text = "Окно входа";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // textBox2
             // 
