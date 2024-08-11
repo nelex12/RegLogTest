@@ -41,32 +41,7 @@ namespace RegLogTest
             {
                 _parent.Close();
             }
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            this.ActiveControl = null;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogWindow_Shown(object sender, EventArgs e)
-        {
-            this.ActiveControl = null;
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }
