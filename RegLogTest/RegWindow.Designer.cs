@@ -38,7 +38,7 @@
             button1.Name = "button1";
             button1.Size = new Size(135, 35);
             button1.TabIndex = 0;
-            button1.Text = "Зарегестрироваться";
+            button1.Text = "Зарегистрироваться";
             button1.UseVisualStyleBackColor = true;
             button1.Click += RegBut_Click;
             // 
