@@ -28,7 +28,7 @@ namespace RegLogTest
         }
         public void RegBut_Click(object? sender, EventArgs e)
         {
-            
+
             MessageBox.Show("123");
             _parent.Close();
         }
@@ -44,6 +44,21 @@ namespace RegLogTest
             {
                 _parent.Close();
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void RegWindow_Shown(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 
