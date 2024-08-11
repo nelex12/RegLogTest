@@ -13,16 +13,15 @@ namespace RegLogTest
     public partial class LogWindow : Form
     {
         MainForm _parent;
+        bool ClosedByPressX = true;
         public LogWindow(MainForm parent)
         {
             InitializeComponent();
             _parent = parent;
-            _parent.Hide();
         }
-        
+
         public void LogWindow_Load(object? sender, EventArgs e)
         {
-            _parent.Hide();
         }
         public void EnterButton_Click(object? sender, EventArgs e)
         {
@@ -32,9 +31,17 @@ namespace RegLogTest
         public void GoToRegWindow(object? sender, EventArgs e)
         {
             new RegWindow(_parent).Show();
+            ClosedByPressX = false;
             this.Close();
         }
 
-
+        private void LogWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (ClosedByPressX)
+            {
+                _parent.Close();
+            }
+            
+        }
     }
 }

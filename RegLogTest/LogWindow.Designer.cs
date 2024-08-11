@@ -61,7 +61,8 @@
             Controls.Add(button1);
             Name = "LogWindow";
             Text = "Вход";
-            Load += this.LogWindow_Load;
+            FormClosing += LogWindow_FormClosing;
+            Load += LogWindow_Load;
             ResumeLayout(false);
         }
 

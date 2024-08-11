@@ -48,7 +48,7 @@
             button2.Name = "button2";
             button2.Size = new Size(135, 39);
             button2.TabIndex = 1;
-            button2.Text = "К окно входа";
+            button2.Text = "К окну входа";
             button2.UseVisualStyleBackColor = true;
             button2.Click += GoToLogWindow;
             // 
@@ -61,6 +61,8 @@
             Controls.Add(button1);
             Name = "RegWindow";
             Text = "Регистрация";
+            FormClosing += RegWindow_FormClosing;
+            Load += RegWindow_Load;
             ResumeLayout(false);
         }
 

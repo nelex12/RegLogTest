@@ -37,7 +37,8 @@
             ClientSize = new Size(800, 450);
             Name = "MainForm";
             Text = "Form1";
-            Load += this.MainForm_Load;
+            Load += MainForm_Load;
+            Shown += MainForm_Shown;
             ResumeLayout(false);
         }
 

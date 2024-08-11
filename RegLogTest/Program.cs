@@ -17,7 +17,7 @@ namespace RegLogTest
             ApplicationConfiguration.Initialize();
             var main = new MainForm();
             Application.Run(main);
-            main.Visible = false;
+
 
         }
     }
