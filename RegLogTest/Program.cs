@@ -1,5 +1,3 @@
-using WorkWithDb;
-
 namespace RegLogTest
 {
     internal static class Program
@@ -15,10 +13,9 @@ namespace RegLogTest
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            var main = new MainForm();
-            Application.Run(main);
+            Application.Run(new MainForm());
 
-            
+
 
         }
     }
