@@ -1,3 +1,5 @@
+using WorkWithDb;
+
 namespace RegLogTest
 {
     public partial class MainForm : Form

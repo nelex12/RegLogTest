@@ -18,6 +18,7 @@ namespace RegLogTest
             var main = new MainForm();
             Application.Run(main);
 
+            
 
         }
     }
